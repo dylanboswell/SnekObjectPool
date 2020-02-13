@@ -29,7 +29,7 @@ using DylanMovement;
             // Update is called once per frame
             public void Update()
                 {
-        
+                    
                     if(controller == null)
                      {
                             Debug.LogError("controller ain't workin my dude");
@@ -41,12 +41,22 @@ using DylanMovement;
                     /*Get the orientation of the vertical and horizontal input axes every frame, supplies them to Move() from BasicMovement*/
  
                     if ((Input.GetButtonDown("Jump"))) /*activate if the spacebar is pressed*/
+                        
                         {
+                            
+
                             Debug.Log("Sneak!"); /*just a fun little message that tells you the command went through */
                             controller.Sneak(); /*run sneak from BasicMovement*/
 
+                
+                        }  
+
+                        if((Input.GetButtonDown("Fire1"))){
+                            Debug.Log("fire!");
                         }
+                        
                 }
+
     
 
             }
