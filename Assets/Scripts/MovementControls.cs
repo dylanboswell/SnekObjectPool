@@ -11,6 +11,8 @@ using DylanMovement;
             * requires BasicMovement.cs to function properly*/
             DylanMovement.BasicMovement controller;
 
+    public GameObject bulletRevolver;
+    public SpriteRenderer bulletSprite;
            
     
 
@@ -51,11 +53,14 @@ using DylanMovement;
                 
                         }  
 
-                        if((Input.GetButtonDown("Fire1"))){
+                        if(Input.GetButtonDown("Fire1"))
+                        {
                             Debug.Log("fire!");
+                            
                         }
-                        
+               
                 }
+
 
     
 
