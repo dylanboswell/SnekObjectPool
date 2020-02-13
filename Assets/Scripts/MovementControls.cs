@@ -17,7 +17,7 @@ public class MovementControls : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject bullet = GameObject.Instantiate(bulletRevolver, new Vector3(1, 1, 0), Quaternion.identity);
+         GameObject bullet = GameObject.Instantiate(bulletRevolver, new Vector3(1, 1, 0), Quaternion.identity);
     }
 
     public void Awake()
