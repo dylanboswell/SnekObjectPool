@@ -35,6 +35,11 @@ namespace ObjectPoolerCD
 
         }
 
+        public void ShootBullet()
+        {
+
+        }
+
         public void Reload()
         {
 

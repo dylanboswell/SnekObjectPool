@@ -18,7 +18,7 @@ public class ShootControls : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Debug.Log("fire!");
-            ObjectPoolerTemp.ShootBullet();
+            pooler.ShootBullet();
         }
     }
 }
