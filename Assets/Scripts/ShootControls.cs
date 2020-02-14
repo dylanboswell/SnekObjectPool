@@ -12,10 +12,15 @@ public class ShootControls : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Awake()
     {
-        if (Input.GetButtonDown("Fire1"))
+        pooler = GetComponent <ObjectPoolerCD.ObjectPoolerTemp>();
+    }
+
+    // Update is called once per frame
+    public void Update()
+    {
+        if (Input.GetButtonDown("Fire1"))//left control or left mouse button
         {
             Debug.Log("fire!");
             pooler.ShootBullet();

@@ -7,7 +7,7 @@ namespace ObjectPoolerCD
 {
     public class ObjectPoolerTemp : MonoBehaviour
     {
-        public Transform[] bulletsRevolver = new Transform[7];
+        public GameObject[] bulletsRevolver = new GameObject[7];
 
         public GameObject player;
         public GameObject bullet;
@@ -15,17 +15,20 @@ namespace ObjectPoolerCD
         public GameObject bulletRevolver;
         public SpriteRenderer bulletSprite;
 
+        public bool placeholder;
+
         // Start is called before the first frame update
         void Start()
         {
-            Transform bulletR0 = bulletsRevolver[0];
-            Transform bulletR1 = bulletsRevolver[1];
-            Transform bulletR2 = bulletsRevolver[2];
-            Transform bulletR3 = bulletsRevolver[3];
-            Transform bulletR4 = bulletsRevolver[4];
-            Transform bulletR5 = bulletsRevolver[5];
-            Transform bulletR6 = bulletsRevolver[6];
-            Transform bulletR7 = bulletsRevolver[7];
+            placeholder = false;
+            GameObject bulletR0 = bulletsRevolver[0];
+            GameObject bulletR1 = bulletsRevolver[1];
+            GameObject bulletR2 = bulletsRevolver[2];
+            GameObject bulletR3 = bulletsRevolver[3];
+            GameObject bulletR4 = bulletsRevolver[4];
+            GameObject bulletR5 = bulletsRevolver[5];
+            GameObject bulletR6 = bulletsRevolver[6];
+            GameObject bulletR7 = bulletsRevolver[7];
 
             
         }
@@ -45,27 +48,39 @@ namespace ObjectPoolerCD
 
         public void ShootBullet()
         {
+            //moves bullet to players position and rotation
             bullet.transform.position = player.transform.position;
             bullet.transform.rotation = player.transform.rotation;
             
 
         }
 
-        /*public void BulletGet()
+      
+
+        public GameObject BulletGet()
         {
+            GameObject currentBullet = null;
+            int bulletFound = 0;
             for (int i = 0; i < 8; i++)
             {
-                return bulletsRevolver[i];
+                if (bulletsRevolver[i] != null)
+                {
+                    bulletFound = 1;
+                    currentBullet = bulletsRevolver[i];
+                }
             }
-            GameObject bullet = GameObject.Instantiate(bulletRevolver, new Vector3(1, 1, 0), Quaternion.identity);
+            
+            if (bulletFound == 1)
+            {
+                return currentBullet;
+            }
+            else
+            {
+                return null;
+            }
         }
-        */
 
-    public void Reload()
-        {
-
-
-        }
+      
     }
 }
 
