@@ -11,13 +11,12 @@ public class MovementControls : MonoBehaviour
    * requires BasicMovement.cs to function properly*/
     DylanMovement.BasicMovement controller;
 
-    public GameObject bulletRevolver;
-    public SpriteRenderer bulletSprite;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-         GameObject bullet = GameObject.Instantiate(bulletRevolver, new Vector3(1, 1, 0), Quaternion.identity);
+         
     }
 
     public void Awake()
@@ -51,11 +50,7 @@ public class MovementControls : MonoBehaviour
 
         }
 
-        if (Input.GetButtonDown("Fire1"))
-        {
-            Debug.Log("fire!");
-
-        }
+        
 
     }
 
