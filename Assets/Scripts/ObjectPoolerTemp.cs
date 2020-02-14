@@ -46,19 +46,30 @@ namespace ObjectPoolerCD
 
         }
 
+
         public void ShootBullet()
         {
             //moves bullet to players position and rotation
             int shootBullet = BulletGet();
+            if (shootBullet == 8)
+            {
+                shootBullet = 0;
+                GameObject bulletR0 = bulletsRevolver[0];
+                GameObject bulletR1 = bulletsRevolver[1];
+                GameObject bulletR2 = bulletsRevolver[2];
+                GameObject bulletR3 = bulletsRevolver[3];
+                GameObject bulletR4 = bulletsRevolver[4];
+                GameObject bulletR5 = bulletsRevolver[5];
+                GameObject bulletR6 = bulletsRevolver[6];
+                GameObject bulletR7 = bulletsRevolver[7];
+            }
             bullet = bulletsRevolver[shootBullet];
             bullet.transform.position = player.transform.position;
             bullet.transform.rotation = player.transform.rotation;
             bullet.SetActive(true);
             // any other stuff you need to do with the bullet goes here
             bulletsRevolver[shootBullet] = null;
-            
         }
-
 
 
         public int BulletGet()
@@ -69,10 +80,15 @@ namespace ObjectPoolerCD
                 if (bulletsRevolver[i] != null)
                 {
                     currentBullet = i;
+
                 }
             }
             return currentBullet;
         }
+
+      
+
+        
 
 
     }
