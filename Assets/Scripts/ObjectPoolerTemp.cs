@@ -7,8 +7,11 @@ namespace ObjectPoolerCD
 {
     public class ObjectPoolerTemp : MonoBehaviour
     {
-        public Transform[] bulletsRevolver = new Transform[8];
+        public Transform[] bulletsRevolver = new Transform[7];
 
+        public GameObject player;
+        public GameObject bullet;
+       
         public GameObject bulletRevolver;
         public SpriteRenderer bulletSprite;
 
@@ -23,6 +26,8 @@ namespace ObjectPoolerCD
             Transform bulletR5 = bulletsRevolver[5];
             Transform bulletR6 = bulletsRevolver[6];
             Transform bulletR7 = bulletsRevolver[7];
+
+            
         }
 
         // Update is called once per frame
@@ -40,11 +45,23 @@ namespace ObjectPoolerCD
 
         public void ShootBullet()
         {
-            GameObject bullet = GameObject.Instantiate(bulletRevolver, new Vector3(1, 1, 0), Quaternion.identity);
+            bullet.transform.position = player.transform.position;
+            bullet.transform.rotation = player.transform.rotation;
+            
 
         }
 
-        public void Reload()
+        /*public void BulletGet()
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                return bulletsRevolver[i];
+            }
+            GameObject bullet = GameObject.Instantiate(bulletRevolver, new Vector3(1, 1, 0), Quaternion.identity);
+        }
+        */
+
+    public void Reload()
         {
 
 
