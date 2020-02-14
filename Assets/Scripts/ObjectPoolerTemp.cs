@@ -9,6 +9,9 @@ namespace ObjectPoolerCD
     {
         public Transform[] bulletsRevolver = new Transform[8];
 
+        public GameObject bulletRevolver;
+        public SpriteRenderer bulletSprite;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -38,6 +41,7 @@ namespace ObjectPoolerCD
         public void ShootBullet()
         {
             GameObject bullet = GameObject.Instantiate(bulletRevolver, new Vector3(1, 1, 0), Quaternion.identity);
+
         }
 
         public void Reload()
