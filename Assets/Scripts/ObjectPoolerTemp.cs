@@ -37,7 +37,7 @@ namespace ObjectPoolerCD
 
         public void ShootBullet()
         {
-
+            GameObject bullet = GameObject.Instantiate(bulletRevolver, new Vector3(1, 1, 0), Quaternion.identity);
         }
 
         public void Reload()
