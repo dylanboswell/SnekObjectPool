@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShootBullet : MonoBehaviour
 
-{
+{       
         public GameObject bulletRevolver;
         public SpriteRenderer bulletSprite;
     // Start is called before the first frame update
