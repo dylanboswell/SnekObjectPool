@@ -49,38 +49,32 @@ namespace ObjectPoolerCD
         public void ShootBullet()
         {
             //moves bullet to players position and rotation
+            int shootBullet = BulletGet();
+            bullet = bulletsRevolver[shootBullet];
             bullet.transform.position = player.transform.position;
             bullet.transform.rotation = player.transform.rotation;
+            bullet.SetActive(true);
+            // any other stuff you need to do with the bullet goes here
+            bulletsRevolver[shootBullet] = null;
             
-
         }
 
-      
 
-        public GameObject BulletGet()
+
+        public int BulletGet()
         {
-            GameObject currentBullet = null;
-            int bulletFound = 0;
+            int currentBullet = -1;
             for (int i = 0; i < 8; i++)
             {
                 if (bulletsRevolver[i] != null)
                 {
-                    bulletFound = 1;
-                    currentBullet = bulletsRevolver[i];
+                    currentBullet = i;
                 }
             }
-            
-            if (bulletFound == 1)
-            {
-                return currentBullet;
-            }
-            else
-            {
-                return null;
-            }
+            return currentBullet;
         }
 
-      
+
     }
 }
 

@@ -14,7 +14,7 @@ public class ShootControls : MonoBehaviour
 
     public void Awake()
     {
-        pooler = GetComponent <ObjectPoolerCD.ObjectPoolerTemp>();
+        pooler = GetComponent <ObjectPoolerCD.ObjectPoolerTemp>();  
     }
 
     // Update is called once per frame
