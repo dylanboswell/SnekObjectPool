@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ShootControls : MonoBehaviour
 {
+    ObjectPoolerCD.ObjectPoolerTemp pooler;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +18,7 @@ public class ShootControls : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Debug.Log("fire!");
-
+            ObjectPoolerTemp.ShootBullet();
         }
     }
 }
