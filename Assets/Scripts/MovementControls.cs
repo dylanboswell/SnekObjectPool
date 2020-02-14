@@ -51,11 +51,7 @@ public class MovementControls : MonoBehaviour
 
         }
 
-        if (Input.GetButtonDown("Fire1"))
-        {
-            Debug.Log("fire!");
-
-        }
+        
 
     }
 
