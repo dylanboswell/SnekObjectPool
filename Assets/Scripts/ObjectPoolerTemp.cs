@@ -7,20 +7,21 @@ namespace ObjectPoolerCD
 {
     public class ObjectPoolerTemp : MonoBehaviour
     {
-        public GameObject[] bulletsRevolver = new GameObject[7];
+        public GameObject[] bulletsRevolver = new GameObject[8];
+        public GameObject[] bulletsRevolverS = new GameObject[8];
 
         public GameObject player;
         public GameObject bullet;
-       
+
         public GameObject bulletRevolver;
         public SpriteRenderer bulletSprite;
 
-        public bool placeholder;
+
 
         // Start is called before the first frame update
         void Start()
         {
-            placeholder = false;
+
             GameObject bulletR0 = bulletsRevolver[0];
             GameObject bulletR1 = bulletsRevolver[1];
             GameObject bulletR2 = bulletsRevolver[2];
@@ -30,7 +31,16 @@ namespace ObjectPoolerCD
             GameObject bulletR6 = bulletsRevolver[6];
             GameObject bulletR7 = bulletsRevolver[7];
 
-            
+            GameObject bulletRS0 = bulletsRevolverS[0];
+            GameObject bulletRS1 = bulletsRevolverS[1];
+            GameObject bulletRS2 = bulletsRevolverS[2];
+            GameObject bulletRS3 = bulletsRevolverS[3];
+            GameObject bulletRS4 = bulletsRevolverS[4];
+            GameObject bulletRS5 = bulletsRevolverS[5];
+            GameObject bulletRS6 = bulletsRevolverS[6];
+            GameObject bulletRS7 = bulletsRevolverS[7];
+
+
         }
 
         // Update is called once per frame
@@ -41,27 +51,19 @@ namespace ObjectPoolerCD
 
 
 
-        public void OnTriggerEnter(Collider other)
-        {
-
-        }
 
 
         public void ShootBullet()
         {
+
             //moves bullet to players position and rotation
             int shootBullet = BulletGet();
-            if (shootBullet == 8)
+            Debug.Log(shootBullet);
+            if (shootBullet == -1)
             {
-                shootBullet = 0;
-                GameObject bulletR0 = bulletsRevolver[0];
-                GameObject bulletR1 = bulletsRevolver[1];
-                GameObject bulletR2 = bulletsRevolver[2];
-                GameObject bulletR3 = bulletsRevolver[3];
-                GameObject bulletR4 = bulletsRevolver[4];
-                GameObject bulletR5 = bulletsRevolver[5];
-                GameObject bulletR6 = bulletsRevolver[6];
-                GameObject bulletR7 = bulletsRevolver[7];
+                shootBullet = 7;
+                for (int i = 0; i < 8; i++) { bulletsRevolver[i] = bulletsRevolverS[i]; }
+                return;
             }
             bullet = bulletsRevolver[shootBullet];
             bullet.transform.position = player.transform.position;
@@ -69,8 +71,12 @@ namespace ObjectPoolerCD
             bullet.SetActive(true);
             // any other stuff you need to do with the bullet goes here
             bulletsRevolver[shootBullet] = null;
+            if (shootBullet == 0)
+            {
+                shootBullet = 7;
+                for (int i = 0; i < 8; i++) { bulletsRevolver[i] = bulletsRevolverS[i]; }
+            }
         }
-
 
         public int BulletGet()
         {
@@ -86,11 +92,10 @@ namespace ObjectPoolerCD
             return currentBullet;
         }
 
-      
 
-        
+
+
 
 
     }
 }
-
