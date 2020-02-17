@@ -33,7 +33,6 @@
 
 *Bullet revolver and Bullets Revolver S.
 
-**Each slot should be supplied with one of the eight bullet gameobjects in the scene.
+**Each should be set to have eight gameobject slots.
 
-***Each should be set to have eight gameobject slots.
-
+***Each slot should be supplied with one of the eight bullet gameobjects in the scene.
