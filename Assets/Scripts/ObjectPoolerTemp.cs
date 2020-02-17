@@ -14,7 +14,7 @@ namespace ObjectPoolerCD
         public GameObject bullet;
 
         public GameObject bulletRevolver;
-        public SpriteRenderer bulletSprite;
+      
 
 
 
